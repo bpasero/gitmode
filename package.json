@@ -1,0 +1,57 @@
+{
+    "name": "gitmode",
+    "displayName": "gitmode",
+    "description": "Provides colouring for Git commit messages and Git config.",
+    "version": "0.0.1",
+    "publisher": "bpasero",
+    "engines": {
+        "vscode": "^0.10.10"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "git-commit",
+                "aliases": [
+                    "Git Commit Message",
+                    "git-commit"
+                ],
+                "filenames": [
+                    "COMMIT_EDITMSG",
+                    "MERGE_MSG"
+                ],
+                "configuration": "./git-commit.configuration.json"
+            },
+            {
+                "id": "git-config",
+                "aliases": [
+                    "Git Config",
+                    "git-config"
+                ],
+                "filenamePatterns": [
+                    "**/.git/config",
+                    "/etc/gitconfig"
+                ],
+                "filenames": [
+                    ".gitconfig",
+                    ".gitmodules"
+                ],
+                "configuration": "./git-config.configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "git-commit",
+                "scopeName": "text.git-commit",
+                "path": "./syntaxes/git-commit.tmLanguage"
+            },
+            {
+                "language": "git-config",
+                "scopeName": "source.git-config",
+                "path": "./syntaxes/git-config.tmLanguage"
+            }
+        ]
+    }
+}
